@@ -3,26 +3,20 @@ package br.com.zup.modelo;
 public class Caixa {
 	
 	// Atributos
-	private double horaEntrada;
 	private double horaSaida;
 	private int valorTotal;
 	
 	// Construtor
-	public Caixa(double horaEntrada, double horaSaida) {
+	public Caixa() {
+		
+	}
+	
+	public Caixa(double horaSaida) {
 		super();
-		this.horaEntrada = horaEntrada;
 		this.horaSaida = horaSaida;
 	}
 	
 	// Getters & Setters
-	public double getHoraEntrada() {
-		return horaEntrada;
-	}
-
-	public void setHoraEntrada(double horaEntrada) {
-		this.horaEntrada = horaEntrada;
-	}
-
 	public double getHoraSaida() {
 		return horaSaida;
 	}
@@ -41,9 +35,11 @@ public class Caixa {
 	
 	// Métodos para calcular a quantidade de horas e valor
 	public double calcularHoras(double horaEntrada, double horaSaida) {
+		Veiculo veiculo = new Veiculo();
+		
 		double horas;
 		
-		horas = this.getHoraSaida() - this.getHoraEntrada();
+		horas = this.getHoraSaida() - veiculo.getHoraEntrada();
 		
 		return horas;
 	}
@@ -75,7 +71,6 @@ public class Caixa {
 	public String toString() {
 		String modelo = "";
 		
-		modelo += "Horário de entrada -> " + this.getHoraEntrada() + "\n";
 		modelo += "Horário de saída -> " + this.getHoraSaida() + "\n";
 		modelo += "Valor total a pagar: R$" + this.getValorTotal() + "\n";
 		
